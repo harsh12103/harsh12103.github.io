@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Harsh | Data Analyst Portfolio</title>
+
+    <meta name="description"
+          content="Harsh's Data Analyst Portfolio — SQL, Power BI, Python and Excel">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.95);
+            border-bottom: 1px solid #334155;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #a78bfa;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #a78bfa;
+        }
+
+        /* HERO */
+
+        .hero {
+            max-width: 1100px;
+            margin: auto;
+            padding: 110px 25px 90px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 80px);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #a78bfa;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            color: #94a3b8;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 22px;
+            border-radius: 8px;
+            border: 1px solid #a78bfa;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #a78bfa;
+            color: #111827;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* SECTIONS */
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 25px;
+        }
+
+        .section-title {
+            font-size: 35px;
+            margin-bottom: 35px;
+        }
+
+        .section-title span {
+            color: #a78bfa;
+        }
+
+        /* ABOUT */
+
+        .about {
+            color: #94a3b8;
+            max-width: 800px;
+            font-size: 17px;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            padding: 10px 16px;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 20px;
+            color: #cbd5e1;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #a78bfa;
+        }
+
+        .project-card h3 {
+            color: #f8fafc;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        .tech {
+            color: #a78bfa;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .project-links a {
+            padding: 8px 14px;
+            border: 1px solid #475569;
+            border-radius: 6px;
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        .project-links a:hover {
+            background: #a78bfa;
+            color: #111827;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .contact-box p {
+            color: #94a3b8;
+            margin-bottom: 10px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #334155;
+            color: #64748b;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 750px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="nav-container">
+
+            <div class="logo">
+                HARSH.
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <h1>
+            Hi, I'm <span>Harsh.</span>
+        </h1>
+
+        <h2>
+            Data Analyst
+        </h2>
+
+        <p>
+            I turn raw data into meaningful business insights using
+            SQL, Power BI, Python and Excel.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#projects" class="btn btn-primary">
+                View My Projects
+            </a>
+
+            <a href="mailto:harsh6000harsh@gmail.com" class="btn">
+                Contact Me
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+        <p class="about">
+            I'm a Computer Science Engineering graduate with a strong
+            interest in Data Analytics and Business Intelligence.
+            I work with SQL, Power BI, Python and Excel to clean,
+            analyze and visualize data.
+            <br><br>
+            My projects focus on solving business problems through
+            KPI development, dashboarding, trend analysis and
+            data-driven insights.
+        </p>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <h2 class="section-title">
+            My <span>Skills</span>
+        </h2>
+
+        <div class="skills">
+
+            <div class="skill">SQL</div>
+            <div class="skill">Power BI</div>
+            <div class="skill">DAX</div>
+            <div class="skill">Power Query</div>
+            <div class="skill">Python</div>
+            <div class="skill">Pandas</div>
+            <div class="skill">NumPy</div>
+            <div class="skill">Excel</div>
+            <div class="skill">Data Cleaning</div>
+            <div class="skill">Data Visualization</div>
+            <div class="skill">Business Analysis</div>
+            <div class="skill">KPI Development</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <h2 class="section-title">
+            Featured <span>Projects</span>
+        </h2>
+
+        <div class="projects">
+
+
+            <!-- MARKETING -->
+
+            <div class="project-card">
+
+                <h3>
+                    Marketing Campaign Performance Analysis
+                </h3>
+
+                <div class="tech">
+                    Power BI • DAX • SQL • Excel
+                </div>
+
+                <p>
+                    Interactive dashboard analyzing marketing revenue,
+                    spending and ROI across campaigns and regions.
+                    Search Engine Ads generated the highest revenue,
+                    while Influencer Marketing produced the highest ROI.
+                </p>
+
+                <div class="project-links">
+
+                    <a href="#" target="_blank">
+                        Live Dashboard
+                    </a>
+
+                    <a href="#" target="_blank">
+                        GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- HR -->
+
+            <div class="project-card">
+
+                <h3>
+                    HR Analytics Dashboard
+                </h3>
+
+                <div class="tech">
+                    Power BI • DAX • Excel
+                </div>
+
+                <p>
+                    HR analytics dashboard analyzing employee attrition
+                    across departments, age groups, salary slabs,
+                    education fields, tenure and job satisfaction.
+                </p>
+
+                <div class="project-links">
+
+                    <a href="#" target="_blank">
+                        Live Dashboard
+                    </a>
+
+                    <a href="#" target="_blank">
+                        GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ECOMMERCE -->
+
+            <div class="project-card">
+
+                <h3>
+                    E-Commerce Sales Intelligence
+                </h3>
+
+                <div class="tech">
+                    Python • Pandas • SQL • Excel • Power BI
+                </div>
+
+                <p>
+                    Analyzed 5,000+ e-commerce orders to identify
+                    sales trends, profit drivers and return patterns.
+                    Used SQL window functions and Power BI dashboards
+                    for business analysis.
+                </p>
+
+                <div class="project-links">
+
+                    <a href="#" target="_blank">
+                        GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CHURN -->
+
+            <div class="project-card">
+
+                <h3>
+                    Customer Churn Analysis
+                </h3>
+
+                <div class="tech">
+                    SQL • Python • Power BI
+                </div>
+
+                <p>
+                    Customer analytics project focused on identifying
+                    customer segments and behavioral patterns associated
+                    with churn and retention.
+                </p>
+
+                <div class="project-links">
+
+                    <a href="#" target="_blank">
+                        GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <h2 class="section-title">
+            Let's <span>Connect</span>
+        </h2>
+
+        <div class="contact-box">
+
+            <p>
+                📧 harsh6000harsh@gmail.com
+            </p>
+
+            <p>
+                📍 Meerut, Uttar Pradesh
+            </p>
+
+            <p>
+                GitHub:
+                <a href="https://github.com/harsh12103" target="_blank">
+                    github.com/harsh12103
+                </a>
+            </p>
+
+            <p>
+                LinkedIn:
+                <a href="https://linkedin.com/in/harsh-webdev" target="_blank">
+                    linkedin.com/in/harsh-webdev
+                </a>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        © 2026 Harsh — Data Analyst Portfolio
+
+    </footer>
+
+</body>
+</html>
